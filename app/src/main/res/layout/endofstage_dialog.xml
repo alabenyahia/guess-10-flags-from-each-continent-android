@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/customdialog_brown"
+    android:orientation="vertical">
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:text="CONGRATS!"
+        android:textSize="24sp"
+        android:background="@drawable/customdialog_toptv"
+        android:gravity="center"
+        android:textColor="#FFF"
+        android:fontFamily="@font/baloo"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="You have reached the end \nof the stage."
+        android:textSize="20sp"
+        android:gravity="center"
+        android:textColor="#FFF"
+        android:fontFamily="@font/baloo"
+        android:layout_marginTop="30dp"
+        android:layout_marginBottom="48dp"/>
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="OK"
+        android:textColor="#FFF"
+        android:background="@drawable/customdialog_bottombtn"
+        android:fontFamily="@font/baloo"
+        android:textSize="28sp"
+        android:paddingTop="8dp"
+        android:paddingBottom="8dp"/>
+
+
+</LinearLayout>

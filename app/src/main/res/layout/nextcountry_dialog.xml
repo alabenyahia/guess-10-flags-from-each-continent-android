@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@drawable/customdialog_brown"
+    android:orientation="vertical">
+    <ImageView
+        android:layout_marginTop="12dp"
+        android:layout_marginBottom="34dp"
+        android:layout_width="match_parent"
+        android:layout_height="120dp"
+        app:srcCompat="@drawable/ic_like_yellow"
+        android:scaleType="fitCenter"/>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:layout_marginBottom="34dp">
+
+        <ImageView
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            app:srcCompat="@drawable/ic_coin_colored"
+            android:scaleType="fitCenter"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="+7"
+            android:textColor="#FFF"
+            android:fontFamily="@font/baloo"
+            android:layout_marginLeft="10dp"
+            android:textSize="28sp"/>
+    </LinearLayout>
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Continue"
+        android:textColor="#FFF"
+        android:background="@drawable/customdialog_bottombtn"
+        android:fontFamily="@font/baloo"
+        android:textSize="28sp"
+        android:paddingTop="8dp"
+        android:paddingBottom="8dp"/>
+
+
+</LinearLayout>

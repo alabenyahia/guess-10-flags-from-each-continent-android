@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/customdialog_brown"
+    android:orientation="vertical">
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:text="Choose your language"
+        android:textSize="20sp"
+        android:background="@drawable/customdialog_toptv"
+        android:gravity="center"
+        android:textColor="#FFF"
+        android:fontFamily="@font/baloo"/>
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:text="English"
+        android:textAllCaps="false"
+        android:textColor="#FFF"
+        android:drawableRight="@drawable/ic_us"
+        android:background="@color/colorPrimary"
+        android:paddingRight="16dp"
+        android:fontFamily="@font/baloo"
+        android:textSize="20sp"/>
+
+    <View android:background="@color/colorPrimaryDark"
+        android:layout_width = "match_parent"
+        android:layout_height="1dp"/>
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:text="Arabic"
+        android:textAllCaps="false"
+        android:textColor="#FFF"
+        android:drawableRight="@drawable/ic_sa"
+        android:background="@color/colorPrimary"
+        android:paddingRight="16dp"
+        android:fontFamily="@font/baloo"
+        android:textSize="20sp"/>
+
+
+</LinearLayout>
