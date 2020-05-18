@@ -37,7 +37,8 @@
         android:textColor="#FFF"
         android:drawableRight="@drawable/ic_start_w"
         android:textSize="24sp"
-        android:paddingRight="12dp" />
+        android:paddingRight="12dp"
+        android:onClick="startClicked"/>
 
     <Button
         android:id="@+id/btn_earn"

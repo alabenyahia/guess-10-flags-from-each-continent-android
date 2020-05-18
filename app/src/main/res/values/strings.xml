@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">Guess 10 Flags</string>
+    <string name="preference_file_key">com.pickurapps.guess10flagsfromeachcontinent.PREFERENCE_FILE_KEY</string>
+    <string name="preference_coins_num">coinsNum</string>
+    <string name="preference_current_continent">0</string>
+    <string name="preference_current_flag_num">0</string>
 </resources>

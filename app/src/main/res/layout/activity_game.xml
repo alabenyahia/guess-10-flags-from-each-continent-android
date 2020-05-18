@@ -23,7 +23,8 @@
             android:layout_height="28dp"
             android:background="@drawable/ic_arrow_back_w"
             style="?android:attr/borderlessButtonStyle"
-            android:layout_marginLeft="12dp"/>
+            android:layout_marginLeft="12dp"
+            android:onClick="backBtnClicked"/>
 
         <Space
             android:layout_width="0dp"

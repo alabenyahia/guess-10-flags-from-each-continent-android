@@ -23,7 +23,8 @@
             android:layout_height="28dp"
             android:background="@drawable/ic_arrow_back_w"
             style="?android:attr/borderlessButtonStyle"
-            android:layout_marginLeft="12dp"/>
+            android:layout_marginLeft="12dp"
+            android:onClick="backBtnClicked"/>
 
         <Space
             android:layout_width="0dp"
@@ -63,8 +64,10 @@
         <androidx.cardview.widget.CardView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:background="@drawable/cardview_brown"
-            android:layout_marginRight="32dp">
+            app:cardBackgroundColor="@color/colorPrimary"
+            app:cardCornerRadius="6dp"
+            android:layout_marginRight="32dp"
+            android:onClick="southAmericaClicked">
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
@@ -89,7 +92,9 @@
         <androidx.cardview.widget.CardView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:background="@drawable/cardview_brown">
+            app:cardBackgroundColor="@color/colorPrimary"
+            app:cardCornerRadius="6dp"
+            android:onClick="northAmericaClicked">
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
@@ -128,8 +133,10 @@
         <androidx.cardview.widget.CardView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:background="@drawable/cardview_brown"
-            android:layout_marginRight="32dp">
+            app:cardBackgroundColor="@color/colorPrimary"
+            app:cardCornerRadius="6dp"
+            android:layout_marginRight="32dp"
+            android:onClick="europeClicked">
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
@@ -154,7 +161,9 @@
         <androidx.cardview.widget.CardView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:background="@drawable/cardview_brown">
+            app:cardBackgroundColor="@color/colorPrimary"
+            app:cardCornerRadius="6dp"
+            android:onClick="asiaClicked">
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
@@ -192,8 +201,10 @@
         <androidx.cardview.widget.CardView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:background="@drawable/cardview_brown"
-            android:layout_marginRight="32dp">
+            app:cardBackgroundColor="@color/colorPrimary"
+            app:cardCornerRadius="6dp"
+            android:layout_marginRight="32dp"
+            android:onClick="africaClicked">
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
@@ -214,7 +225,7 @@
                     android:background="@drawable/cardview_tv"/>
             </LinearLayout>
         </androidx.cardview.widget.CardView>
-        
+
     </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
