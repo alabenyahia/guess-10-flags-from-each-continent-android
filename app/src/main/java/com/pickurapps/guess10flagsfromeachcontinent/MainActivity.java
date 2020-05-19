@@ -10,7 +10,7 @@ import android.view.View;
 
 
 public class MainActivity extends AppCompatActivity {
-    UserData mUserData;
+    UserData userData;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -18,6 +18,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         Utils.hideSystemUI(this);
 
+        // initialize sharedPref if it doesn't have any value yet
         SharedPreferences sharedPref = getSharedPreferences(
                 getString(R.string.preference_file_key), Context.MODE_PRIVATE);
         SharedPreferences.Editor editor = sharedPref.edit();
@@ -35,12 +36,13 @@ public class MainActivity extends AppCompatActivity {
             editor.commit();
         }
 
-        mUserData = UserData.getInstance();
+        // extract userdata to an singleton object from sharedPref
+        userData = UserData.getInstance();
 
-        mUserData.setCoinsNum(sharedPref.getInt(getString(R.string.preference_coins_num), 25));
+        userData.setCoinsNum(sharedPref.getInt(getString(R.string.preference_coins_num), 25));
         int currentContinent = sharedPref.getInt(getString(R.string.preference_current_continent), 0);
-        mUserData.setCurrentContinent(Continent.values()[currentContinent]);
-        mUserData.setCurrentFlagNum(sharedPref.getInt(getString(R.string.preference_current_flag_num), 0));
+        userData.setCurrentContinent(Continent.values()[currentContinent]);
+        userData.setCurrentFlagNum(sharedPref.getInt(getString(R.string.preference_current_flag_num), 0));
 
     }
 
