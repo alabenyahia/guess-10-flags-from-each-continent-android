@@ -3,8 +3,8 @@ package com.pickurapps.guess10flagsfromeachcontinent;
 import java.util.Arrays;
 import java.util.Collections;
 
-public class SouthAmerica {
-    private Stage[] stages;
+public class SouthAmerica extends Continents{
+    private Stage[] mStages;
 
     public SouthAmerica() {
         char[] correctAnswerArgentina = {'A', 'R', 'G', 'E', 'N', 'T', 'I', 'N', 'A'};
@@ -57,16 +57,17 @@ public class SouthAmerica {
         Collections.shuffle(Arrays.asList(randomCharsVenezuela));
         Stage venezuela = new Stage(R.drawable.ic_venezuela, correctAnswerVenezuela, randomCharsVenezuela);
 
-        stages = new Stage[10];
-        stages[0] = argentina;
-        stages[1] = bolivia;
-        stages[2] = brazil;
-        stages[3] = chile;
-        stages[4] = colombia;
-        stages[5] = ecuador;
-        stages[6] = paraguay;
-        stages[7] = peru;
-        stages[8] = uruguay;
-        stages[9] = venezuela;
+        mStages = new Stage[10];
+        mStages[0] = argentina;
+        mStages[1] = bolivia;
+        mStages[2] = brazil;
+        mStages[3] = chile;
+        mStages[4] = colombia;
+        mStages[5] = ecuador;
+        mStages[6] = paraguay;
+        mStages[7] = peru;
+        mStages[8] = uruguay;
+        mStages[9] = venezuela;
+        setStages(mStages);
     }
 }

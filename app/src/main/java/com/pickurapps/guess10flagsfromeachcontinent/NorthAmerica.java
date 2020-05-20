@@ -3,8 +3,8 @@ package com.pickurapps.guess10flagsfromeachcontinent;
 import java.util.Arrays;
 import java.util.Collections;
 
-public class NorthAmerica {
-    private Stage[] stages;
+public class NorthAmerica extends Continents{
+    private Stage[] mStages;
 
     public NorthAmerica() {
         char[] correctAnswerBahamas = {'B', 'A', 'H', 'A', 'M', 'A', 'S'};
@@ -57,17 +57,18 @@ public class NorthAmerica {
         Collections.shuffle(Arrays.asList(randomCharsUnitedStates));
         Stage unitedstates = new Stage(R.drawable.ic_united_states, correctAnswerUnitedStates, randomCharsUnitedStates);
 
-        stages = new Stage[10];
-        stages[0] = bahamas;
-        stages[1] = canada;
-        stages[2] = costarica;
-        stages[3] = cuba;
-        stages[4] = haiti;
-        stages[5] = honduras;
-        stages[6] = jamaica;
-        stages[7] = mexico;
-        stages[8] = panama;
-        stages[9] = unitedstates;
+        mStages = new Stage[10];
+        mStages[0] = bahamas;
+        mStages[1] = canada;
+        mStages[2] = costarica;
+        mStages[3] = cuba;
+        mStages[4] = haiti;
+        mStages[5] = honduras;
+        mStages[6] = jamaica;
+        mStages[7] = mexico;
+        mStages[8] = panama;
+        mStages[9] = unitedstates;
+        setStages(mStages);
     }
 
 }

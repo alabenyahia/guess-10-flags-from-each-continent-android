@@ -3,8 +3,8 @@ package com.pickurapps.guess10flagsfromeachcontinent;
 import java.util.Arrays;
 import java.util.Collections;
 
-public class Europe {
-    private Stage[] stages;
+public class Europe extends Continents{
+    private Stage[] mStages;
 
     public Europe() {
         char[] correctAnswerBelgium = {'B', 'E', 'L', 'G', 'I', 'U', 'M'};
@@ -57,16 +57,17 @@ public class Europe {
         Collections.shuffle(Arrays.asList(randomCharsSwitzerland));
         Stage switzerland = new Stage(R.drawable.ic_switzerland, correctAnswerSwitzerland, randomCharsSwitzerland);
 
-        stages = new Stage[10];
-        stages[0] = belgium;
-        stages[1] = croatia;
-        stages[2] = denmark;
-        stages[3] = france;
-        stages[4] = greece;
-        stages[5] = norway;
-        stages[6] = portugal;
-        stages[7] = slovenia;
-        stages[8] = sweden;
-        stages[9] = switzerland;
+        mStages = new Stage[10];
+        mStages[0] = belgium;
+        mStages[1] = croatia;
+        mStages[2] = denmark;
+        mStages[3] = france;
+        mStages[4] = greece;
+        mStages[5] = norway;
+        mStages[6] = portugal;
+        mStages[7] = slovenia;
+        mStages[8] = sweden;
+        mStages[9] = switzerland;
+        setStages(mStages);
     }
 }

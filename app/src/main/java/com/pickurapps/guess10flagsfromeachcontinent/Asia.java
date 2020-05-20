@@ -3,8 +3,8 @@ package com.pickurapps.guess10flagsfromeachcontinent;
 import java.util.Arrays;
 import java.util.Collections;
 
-public class Asia {
-    private Stage[] stages;
+public class Asia extends Continents{
+    private Stage[] mStages;
 
     public Asia() {
         char[] correctAnswerChina = {'C', 'H', 'I', 'N', 'A'};
@@ -57,16 +57,17 @@ public class Asia {
         Collections.shuffle(Arrays.asList(randomCharsYemen));
         Stage yemen = new Stage(R.drawable.ic_yemen, correctAnswerYemen, randomCharsYemen);
 
-        stages = new Stage[10];
-        stages[0] = china;
-        stages[1] = india;
-        stages[2] = indonesia;
-        stages[3] = japan;
-        stages[4] = kuwait;
-        stages[5] = lebanon;
-        stages[6] = pakistan;
-        stages[7] = qatar;
-        stages[8] = thailand;
-        stages[9] = yemen;
+        mStages = new Stage[10];
+        mStages[0] = china;
+        mStages[1] = india;
+        mStages[2] = indonesia;
+        mStages[3] = japan;
+        mStages[4] = kuwait;
+        mStages[5] = lebanon;
+        mStages[6] = pakistan;
+        mStages[7] = qatar;
+        mStages[8] = thailand;
+        mStages[9] = yemen;
+        setStages(mStages);
     }
 }

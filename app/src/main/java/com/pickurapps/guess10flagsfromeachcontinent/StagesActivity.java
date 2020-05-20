@@ -25,6 +25,7 @@ public class StagesActivity extends AppCompatActivity {
     public void southAmericaClicked(View view) {
         if (mUserData.getCurrentContinent().ordinal() >= 0) {
             Intent myIntent = new Intent(StagesActivity.this, GameActivity.class);
+            myIntent.putExtra("continent", "SOUTH_AMERICA");
             startActivity(myIntent);
         } else {
             Toast.makeText(this, "This stage is locked!",
@@ -35,6 +36,7 @@ public class StagesActivity extends AppCompatActivity {
     public void northAmericaClicked(View view) {
         if (mUserData.getCurrentContinent().ordinal() >= 1) {
             Intent myIntent = new Intent(StagesActivity.this, GameActivity.class);
+            myIntent.putExtra("continent", "NORTH_AMERICA");
             startActivity(myIntent);
         } else {
             Toast.makeText(this, "This stage is locked!",
@@ -45,6 +47,7 @@ public class StagesActivity extends AppCompatActivity {
     public void europeClicked(View view) {
         if (mUserData.getCurrentContinent().ordinal() >= 2) {
             Intent myIntent = new Intent(StagesActivity.this, GameActivity.class);
+            myIntent.putExtra("continent", "EUROPE");
             startActivity(myIntent);
         } else {
             Toast.makeText(this, "This stage is locked!",
@@ -55,6 +58,7 @@ public class StagesActivity extends AppCompatActivity {
     public void asiaClicked(View view) {
         if (mUserData.getCurrentContinent().ordinal() >= 3) {
             Intent myIntent = new Intent(StagesActivity.this, GameActivity.class);
+            myIntent.putExtra("continent", "ASIA");
             startActivity(myIntent);
         } else {
             Toast.makeText(this, "This stage is locked!",
@@ -65,6 +69,7 @@ public class StagesActivity extends AppCompatActivity {
     public void africaClicked(View view) {
         if (mUserData.getCurrentContinent().ordinal() >= 4) {
             Intent myIntent = new Intent(StagesActivity.this, GameActivity.class);
+            myIntent.putExtra("continent", "AFRICA");
             startActivity(myIntent);
         } else {
             Toast.makeText(this, "This stage is locked!",
