@@ -4,7 +4,6 @@ import java.util.Arrays;
 import java.util.Collections;
 
 public class Africa extends Continents{
-    private Stage[] mStages;
 
     public Africa() {
         char[] correctAnswerAlgeria = {'A', 'L', 'G', 'E', 'R', 'I', 'A'};
@@ -57,7 +56,7 @@ public class Africa extends Continents{
         Collections.shuffle(Arrays.asList(randomCharsTunisia));
         Stage tunisia = new Stage(R.drawable.ic_tunisia, correctAnswerTunisia, randomCharsTunisia);
 
-        mStages = new Stage[10];
+        Stage[] mStages = new Stage[10];
         mStages[0] = algeria;
         mStages[1] = angola;
         mStages[2] = egypt;

@@ -4,7 +4,6 @@ import java.util.Arrays;
 import java.util.Collections;
 
 public class SouthAmerica extends Continents{
-    private Stage[] mStages;
 
     public SouthAmerica() {
         char[] correctAnswerArgentina = {'A', 'R', 'G', 'E', 'N', 'T', 'I', 'N', 'A'};
@@ -57,7 +56,7 @@ public class SouthAmerica extends Continents{
         Collections.shuffle(Arrays.asList(randomCharsVenezuela));
         Stage venezuela = new Stage(R.drawable.ic_venezuela, correctAnswerVenezuela, randomCharsVenezuela);
 
-        mStages = new Stage[10];
+        Stage[] mStages = new Stage[10];
         mStages[0] = argentina;
         mStages[1] = bolivia;
         mStages[2] = brazil;

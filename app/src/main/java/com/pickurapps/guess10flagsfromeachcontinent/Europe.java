@@ -4,7 +4,6 @@ import java.util.Arrays;
 import java.util.Collections;
 
 public class Europe extends Continents{
-    private Stage[] mStages;
 
     public Europe() {
         char[] correctAnswerBelgium = {'B', 'E', 'L', 'G', 'I', 'U', 'M'};
@@ -57,7 +56,7 @@ public class Europe extends Continents{
         Collections.shuffle(Arrays.asList(randomCharsSwitzerland));
         Stage switzerland = new Stage(R.drawable.ic_switzerland, correctAnswerSwitzerland, randomCharsSwitzerland);
 
-        mStages = new Stage[10];
+        Stage[] mStages = new Stage[10];
         mStages[0] = belgium;
         mStages[1] = croatia;
         mStages[2] = denmark;

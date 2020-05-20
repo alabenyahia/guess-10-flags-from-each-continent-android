@@ -4,7 +4,6 @@ import java.util.Arrays;
 import java.util.Collections;
 
 public class NorthAmerica extends Continents{
-    private Stage[] mStages;
 
     public NorthAmerica() {
         char[] correctAnswerBahamas = {'B', 'A', 'H', 'A', 'M', 'A', 'S'};
@@ -57,7 +56,8 @@ public class NorthAmerica extends Continents{
         Collections.shuffle(Arrays.asList(randomCharsUnitedStates));
         Stage unitedstates = new Stage(R.drawable.ic_united_states, correctAnswerUnitedStates, randomCharsUnitedStates);
 
-        mStages = new Stage[10];
+
+        Stage[] mStages = new Stage[10];
         mStages[0] = bahamas;
         mStages[1] = canada;
         mStages[2] = costarica;

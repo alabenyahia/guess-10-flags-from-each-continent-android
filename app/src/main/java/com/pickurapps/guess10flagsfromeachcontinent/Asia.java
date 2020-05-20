@@ -4,7 +4,6 @@ import java.util.Arrays;
 import java.util.Collections;
 
 public class Asia extends Continents{
-    private Stage[] mStages;
 
     public Asia() {
         char[] correctAnswerChina = {'C', 'H', 'I', 'N', 'A'};
@@ -57,7 +56,7 @@ public class Asia extends Continents{
         Collections.shuffle(Arrays.asList(randomCharsYemen));
         Stage yemen = new Stage(R.drawable.ic_yemen, correctAnswerYemen, randomCharsYemen);
 
-        mStages = new Stage[10];
+        Stage[] mStages = new Stage[10];
         mStages[0] = china;
         mStages[1] = india;
         mStages[2] = indonesia;
