@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
@@ -31,6 +32,11 @@ public class GameActivity extends AppCompatActivity {
         // set the flag number and the coins number textviews
         flagNumTv.setText(String.valueOf(userData.getCurrentContinent().getCurrentFlagNum()+1) + "/10");
         coinsNumTv.setText(String.valueOf(userData.getCoinsNum()));
+
+        // set flag picture
+        ImageView flagIv = findViewById(R.id.flag_iv);
+        flagIv.setImageResource(userData.getCurrentContinent().getStages()[userData.getCurrentContinent().getCurrentFlagNum()].
+                                        getImageId());
 
         // set answer textviews
         LinearLayout answerFl = findViewById(R.id.answer_fl);
@@ -83,9 +89,6 @@ public class GameActivity extends AppCompatActivity {
             tv.setText(String.valueOf(userData.getCurrentContinent().getStages()[userData.getCurrentContinent().getCurrentFlagNum()]
                     .getRandomChars()[j]));
         }
-
-
-
 
     }
 
