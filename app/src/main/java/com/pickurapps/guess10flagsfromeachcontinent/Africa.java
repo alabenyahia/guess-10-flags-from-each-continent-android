@@ -5,7 +5,10 @@ import java.util.Collections;
 
 public class Africa extends Continents{
 
-    public Africa() {
+    public Africa(boolean isLocked, int currentFlagNum) {
+        setLocked(isLocked);
+        setCurrentFlagNum(currentFlagNum);
+
         char[] correctAnswerAlgeria = {'A', 'L', 'G', 'E', 'R', 'I', 'A'};
         char[] randomCharsAlgeria = {'A', 'L', 'G', 'E', 'R', 'I', 'A', 'N', 'A', 'Q', 'S', 'L', 'O', 'M'};
         Collections.shuffle(Arrays.asList(randomCharsAlgeria));

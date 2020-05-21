@@ -5,7 +5,10 @@ import java.util.Collections;
 
 public class Asia extends Continents{
 
-    public Asia() {
+    public Asia(boolean isLocked, int currentFlagNum) {
+        setLocked(isLocked);
+        setCurrentFlagNum(currentFlagNum);
+
         char[] correctAnswerChina = {'C', 'H', 'I', 'N', 'A'};
         char[] randomCharsChina = {'C', 'H', 'I', 'N', 'A', 'U', 'M', 'N', 'A', 'Q', 'A', 'L', 'O', 'M'};
         Collections.shuffle(Arrays.asList(randomCharsChina));

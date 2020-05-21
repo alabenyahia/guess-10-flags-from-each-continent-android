@@ -3,6 +3,15 @@ package com.pickurapps.guess10flagsfromeachcontinent;
 public abstract class Continents {
     private boolean locked;
     private Stage[] stages;
+    private int currentFlagNum;
+
+    public int getCurrentFlagNum() {
+        return currentFlagNum;
+    }
+
+    public void setCurrentFlagNum(int currentFlagNum) {
+        this.currentFlagNum = currentFlagNum;
+    }
 
     public boolean isLocked() {
         return locked;

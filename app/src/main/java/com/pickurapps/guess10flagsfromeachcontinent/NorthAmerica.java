@@ -5,7 +5,10 @@ import java.util.Collections;
 
 public class NorthAmerica extends Continents{
 
-    public NorthAmerica() {
+    public NorthAmerica(boolean isLocked, int currentFlagNum) {
+        setLocked(isLocked);
+        setCurrentFlagNum(currentFlagNum);
+
         char[] correctAnswerBahamas = {'B', 'A', 'H', 'A', 'M', 'A', 'S'};
         char[] randomCharsBahamas = {'B', 'A', 'H', 'A', 'M', 'A', 'S', 'N', 'A', 'Q', 'A', 'L', 'O', 'M'};
         Collections.shuffle(Arrays.asList(randomCharsBahamas));

@@ -2,10 +2,14 @@ package com.pickurapps.guess10flagsfromeachcontinent;
 
 import java.util.Arrays;
 import java.util.Collections;
+import java.util.List;
 
 public class SouthAmerica extends Continents{
 
-    public SouthAmerica() {
+    public SouthAmerica(boolean isLocked, int currentFlagNum) {
+        setLocked(isLocked);
+        setCurrentFlagNum(currentFlagNum);
+
         char[] correctAnswerArgentina = {'A', 'R', 'G', 'E', 'N', 'T', 'I', 'N', 'A'};
         char[] randomCharsArgentina = {'A', 'R', 'G', 'E', 'N', 'T', 'I', 'N', 'A', 'Q', 'A', 'L', 'O', 'M'};
         Collections.shuffle(Arrays.asList(randomCharsArgentina));

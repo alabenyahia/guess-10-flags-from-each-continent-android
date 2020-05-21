@@ -9,13 +9,14 @@ import android.view.View;
 import android.widget.Toast;
 
 public class StagesActivity extends AppCompatActivity {
-    UserData mUserData = UserData.getInstance();
+    UserData mUserData;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_stages);
         Utils.hideSystemUI(this);
+        mUserData = UserData.getInstance(this);
     }
 
     public void backBtnClicked(View view) {
@@ -23,9 +24,9 @@ public class StagesActivity extends AppCompatActivity {
     }
 
     public void southAmericaClicked(View view) {
-        if (mUserData.getCurrentContinent().ordinal() >= 0) {
+        if (!mUserData.getContinents()[0].isLocked()) {
             Intent myIntent = new Intent(StagesActivity.this, GameActivity.class);
-            myIntent.putExtra("continent", "SOUTH_AMERICA");
+            myIntent.putExtra("continent", 0);
             startActivity(myIntent);
         } else {
             Toast.makeText(this, "This stage is locked!",
@@ -34,9 +35,9 @@ public class StagesActivity extends AppCompatActivity {
     }
 
     public void northAmericaClicked(View view) {
-        if (mUserData.getCurrentContinent().ordinal() >= 1) {
+        if (!mUserData.getContinents()[1].isLocked()) {
             Intent myIntent = new Intent(StagesActivity.this, GameActivity.class);
-            myIntent.putExtra("continent", "NORTH_AMERICA");
+            myIntent.putExtra("continent", 1);
             startActivity(myIntent);
         } else {
             Toast.makeText(this, "This stage is locked!",
@@ -45,9 +46,9 @@ public class StagesActivity extends AppCompatActivity {
     }
 
     public void europeClicked(View view) {
-        if (mUserData.getCurrentContinent().ordinal() >= 2) {
+        if (!mUserData.getContinents()[2].isLocked()) {
             Intent myIntent = new Intent(StagesActivity.this, GameActivity.class);
-            myIntent.putExtra("continent", "EUROPE");
+            myIntent.putExtra("continent", 2);
             startActivity(myIntent);
         } else {
             Toast.makeText(this, "This stage is locked!",
@@ -56,9 +57,9 @@ public class StagesActivity extends AppCompatActivity {
     }
 
     public void asiaClicked(View view) {
-        if (mUserData.getCurrentContinent().ordinal() >= 3) {
+        if (!mUserData.getContinents()[3].isLocked()) {
             Intent myIntent = new Intent(StagesActivity.this, GameActivity.class);
-            myIntent.putExtra("continent", "ASIA");
+            myIntent.putExtra("continent", 3);
             startActivity(myIntent);
         } else {
             Toast.makeText(this, "This stage is locked!",
@@ -67,9 +68,9 @@ public class StagesActivity extends AppCompatActivity {
     }
 
     public void africaClicked(View view) {
-        if (mUserData.getCurrentContinent().ordinal() >= 4) {
+        if (!mUserData.getContinents()[4].isLocked()) {
             Intent myIntent = new Intent(StagesActivity.this, GameActivity.class);
-            myIntent.putExtra("continent", "AFRICA");
+            myIntent.putExtra("continent", 4);
             startActivity(myIntent);
         } else {
             Toast.makeText(this, "This stage is locked!",

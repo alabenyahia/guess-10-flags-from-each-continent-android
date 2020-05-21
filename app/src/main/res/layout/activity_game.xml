@@ -108,7 +108,7 @@
             <Button
                 android:layout_width="150dp"
                 android:layout_height="match_parent"
-                android:text="show next flag"
+                android:text="skip to next flag"
                 android:textSize="12sp"
                 android:drawableRight="@drawable/ic_next_w"
                 style="?android:attr/borderlessButtonStyle"

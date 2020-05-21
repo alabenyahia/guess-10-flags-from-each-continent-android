@@ -5,7 +5,10 @@ import java.util.Collections;
 
 public class Europe extends Continents{
 
-    public Europe() {
+    public Europe(boolean isLocked, int currentFlagNum) {
+        setLocked(isLocked);
+        setCurrentFlagNum(currentFlagNum);
+
         char[] correctAnswerBelgium = {'B', 'E', 'L', 'G', 'I', 'U', 'M'};
         char[] randomCharsBelgium = {'B', 'E', 'L', 'G', 'I', 'U', 'M', 'N', 'A', 'Q', 'A', 'L', 'O', 'M'};
         Collections.shuffle(Arrays.asList(randomCharsBelgium));
