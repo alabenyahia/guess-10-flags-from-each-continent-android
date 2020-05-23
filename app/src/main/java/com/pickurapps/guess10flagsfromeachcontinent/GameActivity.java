@@ -3,7 +3,9 @@ package com.pickurapps.guess10flagsfromeachcontinent;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.graphics.Color;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
@@ -13,16 +15,19 @@ public class GameActivity extends AppCompatActivity {
     TextView flagNumTv;
     TextView coinsNumTv;
     UserData userData;
+    char[] writtenAnswer = {' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' '};
+    int writtenAnswerNextPos;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_game);
-        Utils.hideSystemUI(this);
+
 
         flagNumTv = findViewById(R.id.flag_num_tv);
         coinsNumTv = findViewById(R.id.coins_num_tv);
         userData = UserData.getInstance(this);
+
 
         // get the continent that we're playing it
         Intent intent = getIntent();
@@ -92,7 +97,97 @@ public class GameActivity extends AppCompatActivity {
 
     }
 
+    @Override
+    protected void onResume() {
+        super.onResume();
+        Utils.hideSystemUI(this);
+    }
+
     public void backBtnClicked(View view) {
         finish();
+    }
+
+    public void p1Clicked(View view) {
+        randomCharClicked(view);
+    }
+
+    public void p2Clicked(View view) {
+        randomCharClicked(view);
+    }
+
+    public void p3Clicked(View view) {
+        randomCharClicked(view);
+    }
+
+    public void p4Clicked(View view) {
+        randomCharClicked(view);
+    }
+
+    public void p5Clicked(View view) {
+        randomCharClicked(view);
+    }
+
+    public void p6Clicked(View view) {
+        randomCharClicked(view);
+    }
+
+    public void p7Clicked(View view) {
+        randomCharClicked(view);
+    }
+
+    public void p8Clicked(View view) {
+        randomCharClicked(view);
+    }
+
+    public void p9Clicked(View view) {
+        randomCharClicked(view);
+    }
+
+    public void p10Clicked(View view) {
+        randomCharClicked(view);
+    }
+
+    public void p11Clicked(View view) {
+        randomCharClicked(view);
+    }
+
+    public void p12Clicked(View view) {
+        randomCharClicked(view);
+    }
+
+    public void p13Clicked(View view) {
+        randomCharClicked(view);
+    }
+
+    public void p14Clicked(View view) {
+        randomCharClicked(view);
+    }
+
+    // fill the answer textviews with the chosen chars
+    private void fillAnswerTextViews() {
+        LinearLayout answerFl = findViewById(R.id.answer_fl);
+        for (int i=0; i< answerFl.getChildCount(); i++) {
+            TextView tv = (TextView) answerFl.getChildAt(i);
+            tv.setText(String.valueOf(writtenAnswer[i]));
+
+        }
+
+        LinearLayout answerSl = findViewById(R.id.answer_sl);
+        for (int i=0,j=answerFl.getChildCount(); i< answerSl.getChildCount(); i++,j++) {
+            TextView tv = (TextView) answerSl.getChildAt(i);
+            tv.setText(String.valueOf(writtenAnswer[j]));
+        }
+    }
+
+    // click on a random character textview
+    private void randomCharClicked(View view){
+        if (writtenAnswerNextPos < userData.getCurrentContinent().getStages()[userData
+                .getCurrentContinent().getCurrentFlagNum()].getCorrectAnswer().length) {
+            writtenAnswer[writtenAnswerNextPos] = ((TextView)view).getText().toString().charAt(0);
+            writtenAnswerNextPos++;
+            fillAnswerTextViews();
+            view.setVisibility(View.INVISIBLE);
+        }
+
     }
 }

@@ -16,7 +16,6 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        Utils.hideSystemUI(this);
 
         // initialize sharedPref if it doesn't have any value yet
         SharedPreferences sharedPref = getSharedPreferences(
@@ -100,9 +99,17 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
+    @Override
+    protected void onResume() {
+        super.onResume();
+        Utils.hideSystemUI(this);
+    }
+
 
     public void startClicked(View view) {
         Intent myIntent = new Intent(MainActivity.this, StagesActivity.class);
         startActivity(myIntent);
     }
 }
+
+

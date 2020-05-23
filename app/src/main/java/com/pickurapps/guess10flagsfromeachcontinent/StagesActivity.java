@@ -15,8 +15,13 @@ public class StagesActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_stages);
-        Utils.hideSystemUI(this);
         mUserData = UserData.getInstance(this);
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        Utils.hideSystemUI(this);
     }
 
     public void backBtnClicked(View view) {

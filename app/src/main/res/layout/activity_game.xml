@@ -307,7 +307,8 @@
             android:fontFamily="@font/baloo"
             android:gravity="center"
             android:textAlignment="center"
-            android:layout_marginRight="8dp"/>
+            android:layout_marginRight="8dp"
+            android:onClick="p1Clicked"/>
         <TextView
             android:layout_width="40dp"
             android:layout_height="40dp"
@@ -318,7 +319,8 @@
             android:fontFamily="@font/baloo"
             android:gravity="center"
             android:textAlignment="center"
-            android:layout_marginRight="8dp"/>
+            android:layout_marginRight="8dp"
+            android:onClick="p2Clicked"/>
         <TextView
             android:layout_width="40dp"
             android:layout_height="40dp"
@@ -329,7 +331,8 @@
             android:fontFamily="@font/baloo"
             android:gravity="center"
             android:textAlignment="center"
-            android:layout_marginRight="8dp"/>
+            android:layout_marginRight="8dp"
+            android:onClick="p3Clicked"/>
         <TextView
             android:layout_width="40dp"
             android:layout_height="40dp"
@@ -340,7 +343,8 @@
             android:fontFamily="@font/baloo"
             android:gravity="center"
             android:textAlignment="center"
-            android:layout_marginRight="8dp"/>
+            android:layout_marginRight="8dp"
+            android:onClick="p4Clicked"/>
         <TextView
             android:layout_width="40dp"
             android:layout_height="40dp"
@@ -351,7 +355,8 @@
             android:fontFamily="@font/baloo"
             android:gravity="center"
             android:textAlignment="center"
-            android:layout_marginRight="8dp"/>
+            android:layout_marginRight="8dp"
+            android:onClick="p5Clicked"/>
         <TextView
             android:layout_width="40dp"
             android:layout_height="40dp"
@@ -362,7 +367,8 @@
             android:fontFamily="@font/baloo"
             android:gravity="center"
             android:textAlignment="center"
-            android:layout_marginRight="8dp"/>
+            android:layout_marginRight="8dp"
+            android:onClick="p6Clicked"/>
         <TextView
             android:layout_width="40dp"
             android:layout_height="40dp"
@@ -373,7 +379,8 @@
             android:fontFamily="@font/baloo"
             android:gravity="center"
             android:textAlignment="center"
-            android:layout_marginRight="8dp"/>
+            android:layout_marginRight="8dp"
+            android:onClick="p7Clicked"/>
 
     </LinearLayout>
 
@@ -399,7 +406,8 @@
             android:fontFamily="@font/baloo"
             android:gravity="center"
             android:textAlignment="center"
-            android:layout_marginRight="8dp"/>
+            android:layout_marginRight="8dp"
+            android:onClick="p8Clicked"/>
         <TextView
             android:layout_width="40dp"
             android:layout_height="40dp"
@@ -410,7 +418,8 @@
             android:fontFamily="@font/baloo"
             android:gravity="center"
             android:textAlignment="center"
-            android:layout_marginRight="8dp"/>
+            android:layout_marginRight="8dp"
+            android:onClick="p9Clicked"/>
         <TextView
             android:layout_width="40dp"
             android:layout_height="40dp"
@@ -421,7 +430,8 @@
             android:fontFamily="@font/baloo"
             android:gravity="center"
             android:textAlignment="center"
-            android:layout_marginRight="8dp"/>
+            android:layout_marginRight="8dp"
+            android:onClick="p10Clicked"/>
         <TextView
             android:layout_width="40dp"
             android:layout_height="40dp"
@@ -432,7 +442,8 @@
             android:fontFamily="@font/baloo"
             android:gravity="center"
             android:textAlignment="center"
-            android:layout_marginRight="8dp"/>
+            android:layout_marginRight="8dp"
+            android:onClick="p11Clicked"/>
         <TextView
             android:layout_width="40dp"
             android:layout_height="40dp"
@@ -443,7 +454,8 @@
             android:fontFamily="@font/baloo"
             android:gravity="center"
             android:textAlignment="center"
-            android:layout_marginRight="8dp"/>
+            android:layout_marginRight="8dp"
+            android:onClick="p12Clicked"/>
         <TextView
             android:layout_width="40dp"
             android:layout_height="40dp"
@@ -454,7 +466,8 @@
             android:fontFamily="@font/baloo"
             android:gravity="center"
             android:textAlignment="center"
-            android:layout_marginRight="8dp"/>
+            android:layout_marginRight="8dp"
+            android:onClick="p13Clicked"/>
         <TextView
             android:layout_width="40dp"
             android:layout_height="40dp"
@@ -465,7 +478,8 @@
             android:fontFamily="@font/baloo"
             android:gravity="center"
             android:textAlignment="center"
-            android:layout_marginRight="8dp"/>
+            android:layout_marginRight="8dp"
+            android:onClick="p14Clicked"/>
 
     </LinearLayout>
 
