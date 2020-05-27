@@ -19,8 +19,8 @@ public class NorthAmerica extends Continents{
         Utils.shuffleArray(randomCharsCanada);
         Stage canada = new Stage(R.drawable.ic_canada, correctAnswerCanada, randomCharsCanada);
 
-        char[] correctAnswerCostaRica = {'B', 'R', 'A', 'Z', 'I', 'L'};
-        char[] randomCharsCostaRica = {'B', 'R', 'A', 'Z', 'I', 'L', 'S', 'C', 'R', 'A', 'O', 'P', 'M', 'W'};
+        char[] correctAnswerCostaRica = {'C', 'O', 'S', 'T', 'A', 'R', 'I', 'C', 'A'};
+        char[] randomCharsCostaRica = {'C', 'O', 'S', 'T', 'A', 'R', 'I', 'C', 'A', 'A', 'O', 'P', 'M', 'W'};
         Utils.shuffleArray(randomCharsCostaRica);
         Stage costarica = new Stage(R.drawable.ic_costa_rica, correctAnswerCostaRica, randomCharsCostaRica);
 

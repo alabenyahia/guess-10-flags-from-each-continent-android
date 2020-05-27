@@ -31,7 +31,8 @@
             android:textColor="#FFF"
             android:fontFamily="@font/baloo"
             android:layout_marginLeft="10dp"
-            android:textSize="28sp"/>
+            android:textSize="28sp"
+            android:id="@+id/nextcountry_dialog_coins_tv"/>
     </LinearLayout>
 
     <Button
@@ -43,7 +44,8 @@
         android:fontFamily="@font/baloo"
         android:textSize="28sp"
         android:paddingTop="8dp"
-        android:paddingBottom="8dp"/>
+        android:paddingBottom="8dp"
+        android:id="@+id/nextcountry_dialog_continue_btn"/>
 
 
 </LinearLayout>
