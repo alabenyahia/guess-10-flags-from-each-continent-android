@@ -3,8 +3,10 @@ package com.pickurapps.guess10flagsfromeachcontinent;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.media.Image;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.ImageView;
 import android.widget.Toast;
 
 public class StagesActivity extends AppCompatActivity {
@@ -15,6 +17,24 @@ public class StagesActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_stages);
         userData = UserData.getInstance(this);
+        ImageView northAmericaIv = findViewById(R.id.northamerica_img);
+        ImageView europeIv = findViewById(R.id.europe_img);
+        ImageView asiaIv = findViewById(R.id.asia_img);
+        ImageView africaIv = findViewById(R.id.africa_img);
+        if (!userData.getContinents()[1].isLocked()) {
+            northAmericaIv.setImageResource(R.drawable.ic_lock_open_w);
+        }
+        if (!userData.getContinents()[2].isLocked()) {
+            europeIv.setImageResource(R.drawable.ic_lock_open_w);
+        }
+        if (!userData.getContinents()[3].isLocked()) {
+            asiaIv.setImageResource(R.drawable.ic_lock_open_w);
+        }
+        if (!userData.getContinents()[4].isLocked()) {
+            africaIv.setImageResource(R.drawable.ic_lock_open_w);
+        }
+
+
     }
 
     @Override

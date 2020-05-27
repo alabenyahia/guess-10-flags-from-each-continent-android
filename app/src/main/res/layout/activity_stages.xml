@@ -76,7 +76,8 @@
                     android:layout_width="150dp"
                     android:layout_height="105dp"
                     app:srcCompat="@drawable/ic_lock_open_w"
-                    android:scaleType="center"/>
+                    android:scaleType="center"
+                    android:id="@+id/southamerica_img"/>
                 <TextView
                     android:layout_width="150dp"
                     android:layout_height="45dp"
@@ -103,7 +104,8 @@
                     android:layout_width="150dp"
                     android:layout_height="105dp"
                     app:srcCompat="@drawable/ic_lock_closed_w"
-                    android:scaleType="center"/>
+                    android:scaleType="center"
+                    android:id="@+id/northamerica_img"/>
                 <TextView
                     android:layout_width="150dp"
                     android:layout_height="45dp"
@@ -145,7 +147,8 @@
                     android:layout_width="150dp"
                     android:layout_height="105dp"
                     app:srcCompat="@drawable/ic_lock_closed_w"
-                    android:scaleType="center"/>
+                    android:scaleType="center"
+                    android:id="@+id/europe_img"/>
                 <TextView
                     android:layout_width="150dp"
                     android:layout_height="45dp"
@@ -172,7 +175,8 @@
                     android:layout_width="150dp"
                     android:layout_height="105dp"
                     app:srcCompat="@drawable/ic_lock_closed_w"
-                    android:scaleType="center"/>
+                    android:scaleType="center"
+                    android:id="@+id/asia_img"/>
                 <TextView
                     android:layout_width="150dp"
                     android:layout_height="45dp"
@@ -213,7 +217,8 @@
                     android:layout_width="150dp"
                     android:layout_height="105dp"
                     app:srcCompat="@drawable/ic_lock_closed_w"
-                    android:scaleType="center"/>
+                    android:scaleType="center"
+                    android:id="@+id/africa_img"/>
                 <TextView
                     android:layout_width="150dp"
                     android:layout_height="45dp"
