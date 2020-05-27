@@ -94,17 +94,9 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="50dp"
-            android:orientation="horizontal">
-            <Button
-                android:layout_width="150dp"
-                android:layout_height="match_parent"
-                android:text="show next letter"
-                android:textSize="12sp"
-                android:drawableRight="@drawable/ic_show_w"
-                style="?android:attr/borderlessButtonStyle"
-                android:textColor="#FFF"
-                android:fontFamily="@font/baloo"
-                android:textAllCaps="false"/>
+            android:orientation="horizontal"
+            android:gravity="center">
+
 
             <Button
                 android:layout_width="150dp"

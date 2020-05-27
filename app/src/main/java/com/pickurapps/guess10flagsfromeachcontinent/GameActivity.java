@@ -439,6 +439,9 @@ public class GameActivity extends AppCompatActivity {
                 }
             }
 
+        } else {
+            Toast.makeText(view.getContext(), "50 coins needed",
+                    Toast.LENGTH_SHORT).show();
         }
     }
 }
