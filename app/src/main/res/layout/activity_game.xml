@@ -115,7 +115,8 @@
                 style="?android:attr/borderlessButtonStyle"
                 android:textColor="#FFF"
                 android:fontFamily="@font/baloo"
-                android:textAllCaps="false"/>
+                android:textAllCaps="false"
+                android:onClick="skipToNextFlagClicked"/>
 
         </LinearLayout>
 

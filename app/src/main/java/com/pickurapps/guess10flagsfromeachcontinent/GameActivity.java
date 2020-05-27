@@ -273,8 +273,6 @@ public class GameActivity extends AppCompatActivity {
 
                 }
 
-
-
             }
             // recheck if the answer is wrong
             else if (nextPos == -1) {
@@ -283,32 +281,8 @@ public class GameActivity extends AppCompatActivity {
             }
 
         }
-
-
     }
 
-    // fired when answer char clicked
-    private void answerCharClicked(View view, int pos) {
-        ((TextView)view).setText(" ");
-        writtenAnswer[pos] = ' ';
-        tags[pos] = "";
-
-        LinearLayout pickFl = findViewById(R.id.pick_fl);
-        for (int i=0; i < pickFl.getChildCount(); i++) {
-            TextView tv = (TextView) pickFl.getChildAt(i);
-            if (view.getTag().equals(tv.getTag())) {
-                tv.setVisibility(View.VISIBLE);
-            }
-        }
-
-        LinearLayout pickSl = findViewById(R.id.pick_sl);
-        for (int i=0, j=7; i < pickFl.getChildCount(); i++, j++) {
-            TextView tv = (TextView) pickSl.getChildAt(i);
-            if (view.getTag().equals(tv.getTag())) {
-                tv.setVisibility(View.VISIBLE);
-            }
-        }
-    }
 
     // search for the next position to use in the written answer array
     private int searchWrittenAnswerNextPos() {
@@ -362,5 +336,109 @@ public class GameActivity extends AppCompatActivity {
         dialog.show();
         dialog.getWindow().setAttributes(lp);
 
+    }
+
+    public void skipToNextFlagClicked(View view) {
+        if (userData.getCoinsNum() >= 50) {
+            SharedPreferences sharedPref = getSharedPreferences(
+                    getString(R.string.preference_file_key), Context.MODE_PRIVATE);
+            SharedPreferences.Editor editor = sharedPref.edit();
+            // set current flag num to the next
+            if (userData.getCurrentContinent().getCurrentFlagNum() < 9) {
+                userData.getCurrentContinent().setCurrentFlagNum(userData
+                        .getCurrentContinent().getCurrentFlagNum() + 1);
+                // save current flag num to shared pref
+                switch (continent) {
+                    case 0:
+                        editor.putInt(getString(R.string.preference_south_america_currentflag), userData
+                                .getCurrentContinent().getCurrentFlagNum());
+                        editor.commit();
+                        break;
+                    case 1:
+                        editor.putInt(getString(R.string.preference_north_america_currentflag), userData
+                                .getCurrentContinent().getCurrentFlagNum());
+                        editor.commit();
+                        break;
+                    case 2:
+                        editor.putInt(getString(R.string.preference_europe_currentflag), userData
+                                .getCurrentContinent().getCurrentFlagNum());
+                        editor.commit();
+                        break;
+                    case 3:
+                        editor.putInt(getString(R.string.preference_asia_currentflag), userData
+                                .getCurrentContinent().getCurrentFlagNum());
+                        editor.commit();
+                        break;
+                    case 4:
+                        editor.putInt(getString(R.string.preference_africa_currentflag), userData
+                                .getCurrentContinent().getCurrentFlagNum());
+                        editor.commit();
+                        break;
+                }
+
+                setupNextFlag();
+                // remove used amount of coins
+                userData.setCoinsNum(userData.getCoinsNum()-50);
+                editor.putInt(getString(R.string.preference_coins_num), userData.getCoinsNum());
+                editor.commit();
+            }
+            // if continent completed
+            else {
+                userData.getCurrentContinent().setCurrentFlagNum(0);
+                // save current flag num to shared pref
+                switch (continent) {
+                    case 0:
+                        editor.putInt(getString(R.string.preference_south_america_currentflag), userData
+                                .getCurrentContinent().getCurrentFlagNum());
+                        editor.commit();
+                        break;
+                    case 1:
+                        editor.putInt(getString(R.string.preference_north_america_currentflag), userData
+                                .getCurrentContinent().getCurrentFlagNum());
+                        editor.commit();
+                        break;
+                    case 2:
+                        editor.putInt(getString(R.string.preference_europe_currentflag), userData
+                                .getCurrentContinent().getCurrentFlagNum());
+                        editor.commit();
+                        break;
+                    case 3:
+                        editor.putInt(getString(R.string.preference_asia_currentflag), userData
+                                .getCurrentContinent().getCurrentFlagNum());
+                        editor.commit();
+                        break;
+                    case 4:
+                        editor.putInt(getString(R.string.preference_africa_currentflag), userData
+                                .getCurrentContinent().getCurrentFlagNum());
+                        editor.commit();
+                        break;
+                }
+                //unlock next continent
+                userData.getContinents()[continent + 1].setLocked(false);
+                switch (continent + 1) {
+                    case 0:
+                        editor.putBoolean(getString(R.string.preference_south_america_islocked), false);
+                        editor.commit();
+                        break;
+                    case 1:
+                        editor.putBoolean(getString(R.string.preference_north_america_islocked), false);
+                        editor.commit();
+                        break;
+                    case 2:
+                        editor.putBoolean(getString(R.string.preference_europe_islocked), false);
+                        editor.commit();
+                        break;
+                    case 3:
+                        editor.putBoolean(getString(R.string.preference_asia_islocked), false);
+                        editor.commit();
+                        break;
+                    case 4:
+                        editor.putBoolean(getString(R.string.preference_africa_islocked), false);
+                        editor.commit();
+                        break;
+                }
+            }
+
+        }
     }
 }
