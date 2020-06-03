@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "925163605039",
+    "firebase_url": "https://guess10flagsfromeachcontinent.firebaseio.com",
+    "project_id": "guess10flagsfromeachcontinent",
+    "storage_bucket": "guess10flagsfromeachcontinent.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:925163605039:android:289feb03b820e78e860ada",
+        "android_client_info": {
+          "package_name": "com.pickurapps.guess10flagsfromeachcontinent"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "925163605039-nnocrn2pr67eo31tvmrhr4e6vupgj8lm.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.pickurapps.guess10flagsfromeachcontinent",
+            "certificate_hash": "814451e1e2594c8eecac4aa04d91f4f3ce709482"
+          }
+        },
+        {
+          "client_id": "925163605039-nbtp7jtui670qnojggkf0knifr70hhad.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCTmvweL0RU5SpsKfVukTTRYmYOrTzr3vg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "925163605039-nbtp7jtui670qnojggkf0knifr70hhad.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

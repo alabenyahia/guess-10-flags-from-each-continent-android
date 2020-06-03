@@ -1,16 +1,25 @@
 package com.pickurapps.guess10flagsfromeachcontinent;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
 
+import com.google.android.gms.ads.AdRequest;
+import com.google.android.gms.ads.rewarded.RewardItem;
+import com.google.android.gms.ads.rewarded.RewardedAd;
+import com.google.android.gms.ads.rewarded.RewardedAdCallback;
+import com.google.android.gms.ads.rewarded.RewardedAdLoadCallback;
+
 
 public class MainActivity extends AppCompatActivity {
     UserData userData;
+    private RewardedAd rewardedAd;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -84,6 +93,21 @@ public class MainActivity extends AppCompatActivity {
         // initialize userData 1st time
         userData = UserData.getInstance(this);
 
+        rewardedAd = new RewardedAd(this, "ca-app-pub-6185803298667574/2573877315");
+
+        RewardedAdLoadCallback adLoadCallback = new RewardedAdLoadCallback() {
+            @Override
+            public void onRewardedAdLoaded() {
+                // Ad successfully loaded.
+            }
+
+            @Override
+            public void onRewardedAdFailedToLoad(int errorCode) {
+                // Ad failed to load.
+            }
+        };
+        rewardedAd.loadAd(new AdRequest.Builder().build(), adLoadCallback);
+
 
     }
 
@@ -97,6 +121,39 @@ public class MainActivity extends AppCompatActivity {
     public void startClicked(View view) {
         Intent myIntent = new Intent(MainActivity.this, StagesActivity.class);
         startActivity(myIntent);
+    }
+
+    public void earnCoinsClicked(View view) {
+        if (rewardedAd.isLoaded()) {
+            Activity activityContext = MainActivity.this;
+            RewardedAdCallback adCallback = new RewardedAdCallback() {
+                @Override
+                public void onRewardedAdOpened() {
+                    // Ad opened.
+                }
+
+                @Override
+                public void onRewardedAdClosed() {
+                    // Ad closed.
+                }
+
+                @Override
+                public void onUserEarnedReward(@NonNull RewardItem reward) {
+                    userData.setCoinsNum(userData.getCoinsNum()+20);
+                    SharedPreferences sharedPref = getSharedPreferences(
+                            getString(R.string.preference_file_key), Context.MODE_PRIVATE);
+                    SharedPreferences.Editor editor = sharedPref.edit();
+                    editor.putInt(getString(R.string.preference_coins_num), userData.getCoinsNum());
+                    editor.commit();
+                }
+
+                @Override
+                public void onRewardedAdFailedToShow(int errorCode) {
+                    // Ad failed to display.
+                }
+            };
+            rewardedAd.show(activityContext, adCallback);
+        }
     }
 }
 

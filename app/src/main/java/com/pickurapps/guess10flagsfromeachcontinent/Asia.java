@@ -54,8 +54,8 @@ public class Asia extends Continents{
         Utils.shuffleArray(randomCharsThailand);
         Stage thailand = new Stage(R.drawable.ic_thailand, correctAnswerThailand, randomCharsThailand);
 
-        char[] correctAnswerYemen = {'Y', 'E', 'M', 'A', 'N'};
-        char[] randomCharsYemen = {'Y', 'E', 'M', 'A', 'N', 'E', 'R', 'L', 'A', 'N', 'D', 'S', 'T', 'C'};
+        char[] correctAnswerYemen = {'Y', 'E', 'M', 'E', 'N'};
+        char[] randomCharsYemen = {'Y', 'E', 'M', 'E', 'N', 'E', 'R', 'L', 'A', 'N', 'D', 'S', 'T', 'C'};
         Utils.shuffleArray(randomCharsYemen);
         Stage yemen = new Stage(R.drawable.ic_yemen, correctAnswerYemen, randomCharsYemen);
 

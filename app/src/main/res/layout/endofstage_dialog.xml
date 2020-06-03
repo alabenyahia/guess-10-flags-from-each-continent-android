@@ -34,7 +34,8 @@
         android:fontFamily="@font/baloo"
         android:textSize="28sp"
         android:paddingTop="8dp"
-        android:paddingBottom="8dp"/>
+        android:paddingBottom="8dp"
+        android:id="@+id/end_of_stage_ok_btn"/>
 
 
 </LinearLayout>

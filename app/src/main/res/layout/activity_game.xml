@@ -114,25 +114,48 @@
 
     </LinearLayout>
 
-    <TextView
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:text="UNITEDSTATES"
+        android:layout_height="wrap_content"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toBottomOf="@id/ll_main"
-        android:fontFamily="@font/baloo"
-        android:background="@drawable/tv_white"
-        android:layout_marginLeft="16dp"
-        android:layout_marginRight="16dp"
+        android:orientation="horizontal"
         android:layout_marginTop="30dp"
-        android:textColor="@color/colorPrimary"
-        android:gravity="center"
-        android:textAlignment="center"
-        android:textSize="18sp"
-        android:id="@+id/answer_tv">
+        android:id="@+id/answer_ll">
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="50dp"
+            android:layout_weight="4"
+            android:text="UNITEDSTATES"
+            android:fontFamily="@font/baloo"
+            android:background="@drawable/tv_white"
+            android:layout_marginLeft="16dp"
+            android:layout_marginRight="16dp"
+            android:textColor="@color/colorPrimary"
+            android:gravity="center"
+            android:textAlignment="center"
+            android:textSize="18sp"
+            android:id="@+id/answer_tv">
 
-    </TextView>
+        </TextView>
+
+        <Button
+            android:layout_width="0dp"
+            android:layout_height="50dp"
+            style="?android:attr/borderlessButtonStyle"
+            android:text="RESET"
+            android:fontFamily="@font/baloo"
+            android:textColor="#fff"
+            android:layout_marginRight="16dp"
+            android:background="@drawable/tv_brown"
+            android:layout_weight="1"
+            android:onClick="resetClicked"/>
+
+    </LinearLayout>
+
+
+
 
     <LinearLayout
         android:layout_width="wrap_content"
@@ -140,7 +163,7 @@
         android:orientation="horizontal"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/answer_tv"
+        app:layout_constraintTop_toBottomOf="@id/answer_ll"
         android:paddingRight="8dp"
         android:paddingLeft="8dp"
         android:layout_marginTop="40dp"
@@ -345,5 +368,19 @@
             android:tag="p14"/>
 
     </LinearLayout>
+
+    <com.google.android.gms.ads.AdView
+        xmlns:ads="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/adView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        ads:adSize="BANNER"
+        ads:adUnitId="ca-app-pub-6185803298667574/6684512711"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/pick_sl"
+        android:layout_marginTop="30dp">
+    </com.google.android.gms.ads.AdView>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

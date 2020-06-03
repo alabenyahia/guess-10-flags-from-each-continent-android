@@ -57,6 +57,7 @@
         android:textAllCaps="false"
         android:textColor="#FFF"
         android:textSize="24sp"
+        android:onClick="earnCoinsClicked"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/btn_start" />

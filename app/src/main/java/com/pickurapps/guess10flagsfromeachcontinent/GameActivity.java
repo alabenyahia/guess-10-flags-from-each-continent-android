@@ -18,6 +18,11 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.google.android.gms.ads.AdListener;
+import com.google.android.gms.ads.AdRequest;
+import com.google.android.gms.ads.AdView;
+import com.google.android.gms.ads.InterstitialAd;
+
 import java.util.Arrays;
 
 public class GameActivity extends AppCompatActivity {
@@ -27,6 +32,8 @@ public class GameActivity extends AppCompatActivity {
     char[] writtenAnswer = {' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' '};
     String[] tags = {"", "", "", "", "", "", "", "", "", "", "", "", "", ""};
     int continent;
+    private AdView mAdView;
+    private InterstitialAd mInterstitialAd;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -45,6 +52,23 @@ public class GameActivity extends AppCompatActivity {
         userData.setCurrentContinent(userData.getContinents()[continent]);
 
         setupNextFlag();
+
+        mAdView = findViewById(R.id.adView);
+        AdRequest adRequest = new AdRequest.Builder().build();
+        mAdView.loadAd(adRequest);
+
+        mInterstitialAd = new InterstitialAd(this);
+        mInterstitialAd.setAdUnitId("ca-app-pub-6185803298667574/6301369335");
+        mInterstitialAd.loadAd(new AdRequest.Builder().build());
+
+        mInterstitialAd.setAdListener(new AdListener() {
+            @Override
+            public void onAdClosed() {
+                // Load the next interstitial.
+                mInterstitialAd.loadAd(new AdRequest.Builder().build());
+            }
+
+        });
 
     }
     private void resetWrittenAnswerAndTag() {
@@ -178,6 +202,9 @@ public class GameActivity extends AppCompatActivity {
             view.setVisibility(View.INVISIBLE);
             nextPos = searchWrittenAnswerNextPos();
             if (isFlagCompleted()) {
+                if (mInterstitialAd.isLoaded()) {
+                    mInterstitialAd.show();
+                }
                 //show dialog
                 showNextCountryDialog(this, userData.getCurrentContinent().getStages()[userData
                         .getCurrentContinent().getCurrentFlagNum()].getCorrectAnswer().length);
@@ -268,8 +295,8 @@ public class GameActivity extends AppCompatActivity {
                             break;
                     }
 
-                    Intent myIntent = new Intent(GameActivity.this, StagesActivity.class);
-                    startActivity(myIntent);
+
+                    endOfStageDialog(this);
 
                 }
 
@@ -338,8 +365,38 @@ public class GameActivity extends AppCompatActivity {
 
     }
 
+    private void endOfStageDialog(final Activity activity){
+        final Dialog dialog = new Dialog(activity);
+        dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
+        if (dialog.getWindow()!= null)
+            dialog.getWindow().setBackgroundDrawable(new ColorDrawable(android.graphics.Color.TRANSPARENT));
+
+        dialog.setCancelable(false);
+        dialog.setContentView(R.layout.endofstage_dialog);
+
+
+
+        Button continueButton = dialog.findViewById(R.id.end_of_stage_ok_btn);
+        continueButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                dialog.dismiss();
+                Utils.hideSystemUI(activity);
+                Intent myIntent = new Intent(GameActivity.this, StagesActivity.class);
+                startActivity(myIntent);
+            }
+        });
+
+        WindowManager.LayoutParams lp = new WindowManager.LayoutParams();
+        lp.copyFrom(dialog.getWindow().getAttributes());
+        lp.width = WindowManager.LayoutParams.MATCH_PARENT;
+        dialog.show();
+        dialog.getWindow().setAttributes(lp);
+
+    }
+
     public void skipToNextFlagClicked(View view) {
-        if (userData.getCoinsNum() >= 50) {
+        if (userData.getCoinsNum() >= 50 && userData.getCurrentContinent().getCurrentFlagNum()<9) {
             SharedPreferences sharedPref = getSharedPreferences(
                     getString(R.string.preference_file_key), Context.MODE_PRIVATE);
             SharedPreferences.Editor editor = sharedPref.edit();
@@ -443,5 +500,9 @@ public class GameActivity extends AppCompatActivity {
             Toast.makeText(view.getContext(), "50 coins needed",
                     Toast.LENGTH_SHORT).show();
         }
+    }
+
+    public void resetClicked(View view) {
+        setupNextFlag();
     }
 }
