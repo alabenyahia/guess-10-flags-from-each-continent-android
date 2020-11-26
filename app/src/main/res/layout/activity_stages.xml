@@ -106,13 +106,13 @@
                 android:layout_height="match_parent"
                 android:orientation="vertical">
                 <ImageView
-                    android:layout_width="150dp"
+                    android:layout_width="match_parent"
                     android:layout_height="105dp"
                     app:srcCompat="@drawable/ic_lock_closed_w"
                     android:scaleType="center"
                     android:id="@+id/northamerica_img"/>
                 <TextView
-                    android:layout_width="150dp"
+                    android:layout_width="match_parent"
                     android:layout_height="45dp"
                     android:text="North America"
                     android:textSize="16sp"
@@ -151,13 +151,13 @@
                 android:layout_height="match_parent"
                 android:orientation="vertical">
                 <ImageView
-                    android:layout_width="150dp"
+                    android:layout_width="match_parent"
                     android:layout_height="105dp"
                     app:srcCompat="@drawable/ic_lock_closed_w"
                     android:scaleType="center"
                     android:id="@+id/europe_img"/>
                 <TextView
-                    android:layout_width="150dp"
+                    android:layout_width="match_parent"
                     android:layout_height="45dp"
                     android:text="Europe"
                     android:textSize="16sp"
@@ -181,13 +181,13 @@
                 android:layout_height="match_parent"
                 android:orientation="vertical">
                 <ImageView
-                    android:layout_width="150dp"
+                    android:layout_width="match_parent"
                     android:layout_height="105dp"
                     app:srcCompat="@drawable/ic_lock_closed_w"
                     android:scaleType="center"
                     android:id="@+id/asia_img"/>
                 <TextView
-                    android:layout_width="150dp"
+                    android:layout_width="match_parent"
                     android:layout_height="45dp"
                     android:text="Asia"
                     android:textSize="16sp"
